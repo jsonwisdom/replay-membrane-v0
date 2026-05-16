@@ -58,6 +58,37 @@ jq -r '.entries[] | select(.rank != null) | .receipt' "$BOARD" | while read -r r
 done
 echo "All ranked entries have replay artifacts"
 
+jq -r '.entries[] | "\(.points) \(.receipt)"' "$BOARD" | while read -r pts receipt; do
+  RECEIPT_FILE="${RECEIPTS_DIR}/${receipt}.json"
+  if [ "$pts" -ge 50 ]; then
+    QUORUM_MET=$(jq -r '.quorum.met // false' "$RECEIPT_FILE" 2>/dev/null || echo "false")
+    if [ "$QUORUM_MET" != "true" ]; then
+      echo "High-value entry requires quorum: $receipt ($pts points)"
+      exit 1
+    fi
+    echo "Quorum met for high-value entry: $receipt"
+  fi
+done
+echo "High-value quorum enforcement passed"
+
+jq -r '.entries[].receipt' "$BOARD" | while read -r receipt; do
+  RECEIPT_FILE="${RECEIPTS_DIR}/${receipt}.json"
+  COUNT=$(jq '.quorum.attestations | length // 0' "$RECEIPT_FILE" 2>/dev/null || echo 0)
+  if [ "$COUNT" -gt 0 ]; then
+    for i in $(seq 0 $((COUNT - 1))); do
+      TMP=$(mktemp)
+      jq ".quorum.attestations[$i]" "$RECEIPT_FILE" > "$TMP"
+      ./verify_attestation.sh "$TMP" "$RECEIPT_FILE" trusted_nodes.txt >/dev/null || {
+        echo "Invalid attestation in $receipt at index $i"
+        rm -f "$TMP"
+        exit 1
+      }
+      rm -f "$TMP"
+    done
+  fi
+done
+echo "All embedded attestations verified"
+
 echo "Cross-validation: receipts must be replayable by independent node"
 echo "================================"
 echo "LEADERBOARD_VERIFIED_INTEGRITY_LEDGER_ACTIVE"
