@@ -1,0 +1,48 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "required": [
+    "attestation_type",
+    "receipt_id",
+    "node_id",
+    "result",
+    "timestamp",
+    "signature",
+    "witness_hash"
+  ],
+  "properties": {
+    "attestation_type": {
+      "const": "INDEPENDENT_REPLAY_ATTESTATION_V1"
+    },
+    "receipt_id": {
+      "type": "string",
+      "pattern": "^RECEIPT_[A-Z0-9_]+$"
+    },
+    "node_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "result": {
+      "enum": [
+        "CONFIRMED_DIVERGENCE",
+        "REPLAY_FAILED",
+        "DISAGREES_WITH_FINDING"
+      ]
+    },
+    "timestamp": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "signature": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64,}$"
+    },
+    "witness_hash": {
+      "type": "string",
+      "pattern": "^sha256:[a-f0-9]{64}$"
+    },
+    "replay_log_ref": {
+      "type": "string"
+    }
+  }
+}
