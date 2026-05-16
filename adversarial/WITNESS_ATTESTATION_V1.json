@@ -1,0 +1,33 @@
+{
+  "version": "WITNESS_ATTESTATION_V1",
+  "doctrine": "INDEPENDENT_REPLAY_REQUIRES_SIGNED_WITNESS",
+  "required_fields": [
+    "attestation_type",
+    "receipt_id",
+    "node_id",
+    "operator_class",
+    "replay_result",
+    "witness_hash",
+    "timestamp_utc",
+    "signature_algorithm",
+    "public_key",
+    "signature"
+  ],
+  "allowed_replay_results": [
+    "CONFIRMED_DIVERGENCE",
+    "CONFIRMED_CONVERGENCE",
+    "REPLAY_DIVERGED",
+    "REPLAY_REJECTED"
+  ],
+  "allowed_signature_algorithms": [
+    "ed25519"
+  ],
+  "rules": {
+    "signature_required": true,
+    "public_key_required": true,
+    "witness_hash_required": true,
+    "node_id_required": true,
+    "timestamp_required": true,
+    "jay_cannot_satisfy_independent_quorum_alone": true
+  }
+}
