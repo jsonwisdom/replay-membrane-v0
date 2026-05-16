@@ -78,6 +78,13 @@
       "status": "PASS",
       "canonical_root": "2bfd14f43d17fc7cea24e0917a8879b4b2f880b8baeec1b9d90fbaad655e71bd",
       "class": "NUMERIC_JSON_CANONICALIZATION"
+    },
+    {
+      "suite": "forbidden-json",
+      "receipt": "REPLAY_RECEIPT_FORBIDDEN_JSON_001",
+      "status": "PARTIAL_PASS_WITH_CONNECTOR_POLICY_INTERFERENCE",
+      "canonical_root": null,
+      "class": "JSON_PARSER_POLICY_AND_TOOLING_LAYER_POLICY_INTERFERENCE"
     }
   ]
 }
