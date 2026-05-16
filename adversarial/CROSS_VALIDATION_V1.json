@@ -1,0 +1,22 @@
+{
+  "version": "CROSS_VALIDATION_V1",
+  "doctrine": "INDEPENDENT_NODE_REPLAY_OR_NO_CIVILIZATIONAL_SCORE",
+  "primary_node": "Jay",
+  "consensus_required": 2,
+  "rules": {
+    "high_value_score_requires_quorum": true,
+    "high_value_threshold_points": 50,
+    "node_id_required": true,
+    "receipt_id_required": true,
+    "witness_hash_required": true,
+    "independent_operator_required": true
+  },
+  "receipts": [
+    {
+      "receipt_id": "RECEIPT_CONNECTOR_POLICY_001",
+      "primary_result": "VALIDATED",
+      "quorum_met": false,
+      "confirmations": []
+    }
+  ]
+}
