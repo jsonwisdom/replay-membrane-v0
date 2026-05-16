@@ -64,6 +64,13 @@
       "status": "PASS",
       "canonical_root": "92fdb622f2a9d84b93306c3e74d66838e2df34dfae920fe3afa7072d33ed1e0b",
       "class": "ARCHIVE_CANONICALIZATION"
+    },
+    {
+      "suite": "whitespace",
+      "receipt": "REPLAY_RECEIPT_WHITESPACE_001",
+      "status": "PASS",
+      "canonical_root": "43258cff783fe7036d8a43033f830adfc60ec037382473548ac742b888292777",
+      "class": "WHITESPACE_CANONICALIZATION"
     }
   ]
 }
