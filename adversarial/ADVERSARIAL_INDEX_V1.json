@@ -71,6 +71,13 @@
       "status": "PASS",
       "canonical_root": "43258cff783fe7036d8a43033f830adfc60ec037382473548ac742b888292777",
       "class": "WHITESPACE_CANONICALIZATION"
+    },
+    {
+      "suite": "numeric-json",
+      "receipt": "REPLAY_RECEIPT_NUMERIC_JSON_001",
+      "status": "PASS",
+      "canonical_root": "2bfd14f43d17fc7cea24e0917a8879b4b2f880b8baeec1b9d90fbaad655e71bd",
+      "class": "NUMERIC_JSON_CANONICALIZATION"
     }
   ]
 }
