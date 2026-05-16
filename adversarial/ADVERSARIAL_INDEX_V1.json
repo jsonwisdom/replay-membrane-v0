@@ -92,6 +92,13 @@
       "status": "PASS",
       "canonical_root": "dd7d364959e31d8a93f4c80e4ef2d6be9850728c658f65e1e2f009581b817d64",
       "class": "BINARY_TRANSPORT_CANONICALIZATION"
+    },
+    {
+      "suite": "schema-extra-fields",
+      "receipt": "REPLAY_RECEIPT_SCHEMA_EXTRA_FIELDS_001",
+      "status": "PASS",
+      "canonical_root": "978edc33a9bb63771f47358bd2945aa795377baec9f11212d55b278251198a6a",
+      "class": "SCHEMA_STRICTNESS_AND_DUPLICATE_KEY_REJECTION"
     }
   ]
 }
