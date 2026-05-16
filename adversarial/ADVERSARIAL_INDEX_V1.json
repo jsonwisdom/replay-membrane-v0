@@ -1,0 +1,69 @@
+{
+  "version": "ADVERSARIAL_INDEX_V1",
+  "generated_at_utc": "2026-05-16T00:00:00Z",
+  "suites": [
+    {
+      "suite": "unicode",
+      "receipt": "REPLAY_RECEIPT_UNICODE_002",
+      "status": "PASS",
+      "canonical_root": "c24e3292fdfdc1a1b560197668f19618def82d8320b800b881ee786b4997ec3f",
+      "class": "NORMALIZATION_DRIFT"
+    },
+    {
+      "suite": "locale",
+      "receipt": "REPLAY_RECEIPT_LOCALE_001",
+      "status": "PASS",
+      "canonical_root": "ae73a161b08cd35b6d428544b78bd5a07dbc712b23d505946c19313066cec7f9",
+      "class": "LOCALE_VARIANCE"
+    },
+    {
+      "suite": "nondet",
+      "receipt": "REPLAY_RECEIPT_NONDET_001",
+      "status": "PASS",
+      "canonical_root": null,
+      "class": "NONDETERMINISM_REJECTION"
+    },
+    {
+      "suite": "ordering",
+      "receipt": "REPLAY_RECEIPT_ORDERING_001",
+      "status": "PASS",
+      "canonical_root": "4fdbc441ea7b546100e086ac1e4fc5ae6749b7314311c99db05be450eca12996",
+      "class": "FILESYSTEM_ORDERING"
+    },
+    {
+      "suite": "cross-runtime",
+      "receipt": "REPLAY_RECEIPT_CROSS_RUNTIME_001",
+      "status": "PASS",
+      "canonical_root": "d8ef2985753c044db2d5f6a39b7fcb1cb1891ba4052250f2de64018b7a77a3a2",
+      "class": "CROSS_RUNTIME_REPLAY"
+    },
+    {
+      "suite": "json",
+      "receipt": "REPLAY_RECEIPT_JSON_001",
+      "status": "PASS",
+      "canonical_root": "c6b26c3ec714aeb6d6a90c28c32bb9e006b41761e6916d8edd3c4fcb499dc195",
+      "class": "JSON_CANONICALIZATION"
+    },
+    {
+      "suite": "float",
+      "receipt": "REPLAY_RECEIPT_FLOAT_001",
+      "status": "PASS",
+      "canonical_root": "221764976efe04132774d96b0253cc31434c5261737469324f222621baf34b20",
+      "class": "FLOAT_DETERMINISM"
+    },
+    {
+      "suite": "line-ending",
+      "receipt": "REPLAY_RECEIPT_LINE_ENDING_001",
+      "status": "PASS",
+      "canonical_root": "4fdbc441ea7b546100e086ac1e4fc5ae6749b7314311c99db05be450eca12996",
+      "class": "LINE_ENDING_NORMALIZATION"
+    },
+    {
+      "suite": "archive",
+      "receipt": "REPLAY_RECEIPT_ARCHIVE_002",
+      "status": "PASS",
+      "canonical_root": "92fdb622f2a9d84b93306c3e74d66838e2df34dfae920fe3afa7072d33ed1e0b",
+      "class": "ARCHIVE_CANONICALIZATION"
+    }
+  ]
+}
