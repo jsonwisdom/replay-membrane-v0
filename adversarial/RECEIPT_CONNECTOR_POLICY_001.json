@@ -1,0 +1,28 @@
+{
+  "receipt_type": "REPLAY_ADVERSARY_RECEIPT_V2",
+  "receipt_id": "RECEIPT_CONNECTOR_POLICY_001",
+  "leaderboard_entry": "connector-policy-surface",
+  "suite": "forbidden-json",
+  "finding_class": "TOOLING_LAYER_POLICY_INTERFERENCE",
+  "status": "VALIDATED",
+  "points": 50,
+  "doctrine": "WITH_JAY_OR_AGAINST_JAY_PROOF_BOTH_WAYS",
+  "replay_artifact": {
+    "fixture_sha256": "d937ca4e613bcd9b1b87d00fe86f8d1bcadfbc234c54226d5f5d44f4159eeb4b",
+    "fixture_content": "{\n  // this JSON comment should be rejected by strict parser\n  \"key\": \"value\"\n}",
+    "replay_command": "python3 -m json.tool fixtures/forbidden-json/comments.json",
+    "replay_env": {
+      "parser_mode": "rfc8259",
+      "transport_layer": "GitHub connector",
+      "connector_version": "observed-2026-05-16"
+    }
+  },
+  "witness": {
+    "expected_parser_result": "FORBIDDEN_JSON_REJECTED",
+    "actual_transport_result": "BLOCKED_BY_CONNECTOR_POLICY",
+    "divergence_class": "TOOLING_LAYER_POLICY_INTERFERENCE"
+  },
+  "impact": "DISCOVERED_NEW_REPLAY_SURFACE",
+  "attempted_fixture_path": "fixtures/forbidden-json/comments.json",
+  "blocked_layer": "GitHub connector safety checks"
+}
