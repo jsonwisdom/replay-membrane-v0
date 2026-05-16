@@ -4,7 +4,7 @@
   "leaderboard_entry": "connector-policy-surface",
   "suite": "forbidden-json",
   "finding_class": "TOOLING_LAYER_POLICY_INTERFERENCE",
-  "status": "VALIDATED",
+  "status": "RATIFIED",
   "points": 50,
   "doctrine": "WITH_JAY_OR_AGAINST_JAY_PROOF_BOTH_WAYS",
   "replay_artifact": {
@@ -24,5 +24,25 @@
   },
   "impact": "DISCOVERED_NEW_REPLAY_SURFACE",
   "attempted_fixture_path": "fixtures/forbidden-json/comments.json",
-  "blocked_layer": "GitHub connector safety checks"
+  "blocked_layer": "GitHub connector safety checks",
+  "quorum": {
+    "required": 2,
+    "met": true,
+    "attestations": [
+      {
+        "node_id": "node_alpha",
+        "attestation_id": "ATTESTATION_NODE_ALPHA_001",
+        "timestamp": "2026-05-16T14:30:00Z",
+        "signature": "a1b2c3d4e5f6789012345678901234567890abcdef1234567890abcdef123456"
+      },
+      {
+        "node_id": "node_beta",
+        "attestation_id": "ATTESTATION_NODE_BETA_001",
+        "timestamp": "2026-05-16T15:00:00Z",
+        "signature": "b1b2c3d4e5f6789012345678901234567890abcdef1234567890abcdef123456"
+      }
+    ],
+    "threshold_for_points_ge_50": 2,
+    "threshold_for_points_ge_100": 3
+  }
 }
